@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "Remera mistica",
+    "descripcon": "Una remera re zarpada que te la pones y adquiris poderes",
+    "stock": "121",
+    "price": "245.5",
+    "img": "https://ih1.redbubble.net/image.8227368.6572/ssrco,classic_tee,womens,fafafa:ca443f4786,front_alt,square_product,600x600.u1.jpg"
+  },
+  {
+    "id": "2",
+    "title": "Pantalon galactico",
+    "descripcon": "Un pantalon de otra dimension que si te lo pones se te llena el c... de preguntas",
+    "stock": "5",
+    "price": "377.5",
+    "img": "https://i.pinimg.com/474x/8c/30/b6/8c30b6b3a4bf8f7b8841a11440d5aae8.jpg"
+  },
+  {
+    "id": "3",
+    "title": "Gorra interdimensional",
+    "descripcon": "Una gorra comun y corriente, pero te la pones y te ves a vos mismo en 3 a 5 dimensiones paralelas",
+    "stock": "74",
+    "price": "152.3",
+    "img": "https://m.media-amazon.com/images/I/71Ig33XV0KL._AC_UX679_.jpg"
+  }
+]

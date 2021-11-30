@@ -1,1 +1,7 @@
-<h1>PROYECTO FINAL</h1>
+<h1>Lista de productos</h1>
+
+<div class="lista-productos">
+  <div *ngFor="let prod of productos" class="lista-productos">
+    <product-card [producto]="prod"></product-card>
+  </div>
+</div>
