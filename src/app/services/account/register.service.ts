@@ -7,11 +7,11 @@ import { BaseService } from '../base.service';
 })
 export class RegisterService extends BaseService {
 
-  endpoint: string = 'signup';
   
-  postUser() {
-    this.setEndPoint(this.endpoint);
-    return this.post('');
+  
+  postUser(obj:any) {
+    this.setEndPoint('auth/signup');
+    return this.post(obj);
   }
       
 }
