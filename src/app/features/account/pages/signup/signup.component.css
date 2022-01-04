@@ -5,28 +5,41 @@ body {
   font-weight: 300;
 }
 
+h3 {
+  color: #efc2bd;
+}
+
 .card {
   border: none;
-  padding: 20px;
-  background-color: #1c1e21;
+  padding: 40px;
+  background-color: #1c2331;
   color: #fff;
-  height: 480px;
-  width: 800px;
+  height: 600px;
+  width: 780px;
 }
 
 .form-input {
   position: relative;
   margin-bottom: 10px;
   margin-top: 10px;
-  height: 60px;
+  height: 120px;
 }
 
 .form-control {
   height: 40px;
   max-width: 400px;
   background-color: #1c1e21;
-  text-indent: 24px;
   font-size: 15px;
+}
+
+.form-control {
+  background-color: #fff;
+  color: #fff;
+}
+
+input:focus {
+  background-color: #efc2bd;
+  color: #000;
 }
 
 .signup {
@@ -35,5 +48,15 @@ body {
 }
 .btn {
   background-color: #617886;
-  border-color: #0000;
+  border-color: #efc2bd;
+  height: 80px;
+  font-size: 18px;
+}
+
+.btn:hover {
+  background-color: #efc2bd;
+  color: #1c1e21;
+}
+.login-text {
+  color: #efc2bd;
 }

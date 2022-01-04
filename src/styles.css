@@ -6,3 +6,8 @@
   font-family: "Nunito", sans-serif;
   font-size: 15px;
 }
+
+body {
+  background-image: url("./assets/img/fondo2.png");
+  background-position: center center;
+}

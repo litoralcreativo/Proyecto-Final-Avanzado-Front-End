@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { UsersRoutingModule } from './account-routing.module';
-import { AccountComponent } from './account.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -12,7 +11,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     SignupComponent,
     SigninComponent,
-    AccountComponent
   ],
   imports: [
     CommonModule,
@@ -20,6 +18,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  exports: [AccountComponent,SignupComponent,SigninComponent]
+  exports: [SignupComponent,SigninComponent]
 })
 export class AccountModule { }
