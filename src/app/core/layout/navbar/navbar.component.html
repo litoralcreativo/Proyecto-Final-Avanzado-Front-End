@@ -1,0 +1,46 @@
+<nav
+  class="
+    d-flex
+    flex-wrap
+    align-items-center
+    justify-content-center justify-content-md-between
+    py-3
+    mb-4
+    border-bottom
+    bg
+  "
+>
+  <ul class="nav col-12 col-md-auto mb-2 ms-2 justify-content-center mb-md-0">
+    <li><a routerLink="/" class="nav-link px-2 link-light">Inicio</a></li>
+    <li>
+      <a routerLink="/products" class="nav-link px-2 link-light">Productos</a>
+    </li>
+    <li>
+      <a routerLink="/" class="nav-link px-2 link-light">Quienes somos</a>
+    </li>
+    <li>
+      <a routerLink="/" class="nav-link px-2 link-light">Consultas</a>
+    </li>
+  </ul>
+
+  <li class="nav-item dropdown">
+    <a
+      class="nav-link dropdown-toggle"
+      href="#"
+      id="navbarDropdown"
+      role="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      Cuentas
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li>
+        <a class="dropdown-item" routerLink="/account/login">Login</a>
+      </li>
+      <li>
+        <a class="dropdown-item" routerLink="/account/register">Registro</a>
+      </li>
+    </ul>
+  </li>
+</nav>

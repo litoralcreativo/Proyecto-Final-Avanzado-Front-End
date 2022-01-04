@@ -1,0 +1,31 @@
+.bg {
+  background-color: #1c2331;
+}
+
+nav {
+  height: 100px;
+}
+
+a {
+  color: #fff;
+}
+a:hover,
+a:focus {
+  color: #efc2bd;
+}
+.dropdown-menu {
+  color: #000;
+  background-color: #efc2bd;
+}
+.dropdown-item {
+  color: #000;
+}
+
+.dropdown-item:focus {
+  color: #fff;
+  background-color: #efc2bd;
+}
+.dropdown-item:hover {
+  color: #fff;
+  background-color: #1c2331;
+}

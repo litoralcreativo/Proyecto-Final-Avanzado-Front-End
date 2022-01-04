@@ -1,3 +1,21 @@
 footer {
-  height: 300px;
+  height: 480px;
+  background-color: #1c2331;
+}
+
+.social-media {
+  background-color: #db997f;
+  height: 60px;
+}
+a:hover {
+  font-size: 25px;
+}
+
+.main-content {
+  height: 400px;
+}
+
+.copyright {
+  height: 60px;
+  background-color: #db997f;
 }
