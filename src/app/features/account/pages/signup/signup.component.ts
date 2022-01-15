@@ -5,10 +5,9 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent implements OnInit {
-
   formObj: any = {
     email: new FormControl('', []),
     cel: new FormControl('', []),
@@ -21,19 +20,23 @@ export class SignupComponent implements OnInit {
 
   signupForm: FormGroup = new FormGroup(this.formObj);
 
-  constructor(private registerService: RegisterService, private router: Router) {}
+  constructor(
+    private registerService: RegisterService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-    this.signupForm
-  };
+    this.signupForm;
+  }
 
   async signup() {
     try {
-      const data: any = await this.registerService.postUser(this.signupForm.value)
-      console.log(data)
+      const data: any = await this.registerService.postUser(
+        this.signupForm.value
+      );
+      console.log(data);
     } catch (error) {
-      return error
+      return error;
     }
   }
-
 }

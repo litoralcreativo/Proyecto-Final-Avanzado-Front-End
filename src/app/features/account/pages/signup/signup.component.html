@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row d-flex align-items-center justify-content-center">
     <div class="col-md-12 col-lg-6 my-4">
-      <form [formGroup]= "signupForm" (ngSubmit)= "signup()">
+      <form [formGroup]="signupForm" (ngSubmit)="signup()">
         <div class="card px-5 py-5">
           <h3 class="text-center">Formulario de Registro</h3>
           <div class="d-flex mt-4 justify-content-center">
@@ -9,19 +9,49 @@
             ><span>Datos de Contacto</span>
           </div>
           <div class="form-input d-flex">
-            <input type="text" class="form-control me-2" placeholder="Email" formControlName= "email" />
-  
-            <input type="text" class="form-control" placeholder="Telefono" formControlName= "cel" />
+            <input
+              type="text"
+              class="form-control me-2"
+              placeholder="Email"
+              formControlName="email"
+            />
+
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Telefono"
+              formControlName="cel"
+            />
           </div>
           <div class="d-flex mt-2 justify-content-center">
             <i class="fa fa-user me-2 mt-1"></i>
             <span>Datos del Usuario</span>
           </div>
           <div class="form-input d-flex">
-            <input type="text" class="form-control me-2" placeholder="Username" formControlName= "username" />
-            <input type="text" class="form-control me-2" placeholder="Nombre" formControlName= "name" />
-            <input type="text" class="form-control me-2" placeholder="Apellido" formControlName= "surname" />
-            <input type="text" class="form-control" placeholder="Edad" formControlName= "age" />
+            <input
+              type="text"
+              class="form-control me-2"
+              placeholder="Username"
+              formControlName="username"
+            />
+            <input
+              type="text"
+              class="form-control me-2"
+              placeholder="Nombre"
+              formControlName="name"
+            />
+            <input
+              type="text"
+              class="form-control me-2"
+              placeholder="Apellido"
+              formControlName="surname"
+            />
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Edad"
+              formControlName="age"
+            />
           </div>
           <div class="form-input m-auto">
             <div class="d-flex mt-2 mb-1 justify-content-center">
@@ -32,11 +62,11 @@
               type="password"
               class="form-control text-center"
               placeholder="***************"
-              formControlName= "password"
+              formControlName="password"
             />
           </div>
           <button class="btn btn-primary mt-5 signup">Registrarse</button>
-  
+
           <div class="text-center mt-4">
             <span>Ya sos usuario/a?</span>
             <a routerLink="../login" class="login-text text-decoration-none">
