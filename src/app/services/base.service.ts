@@ -3,20 +3,21 @@ import { Injectable } from '@angular/core';
 import { environment } from './../../environments/environment';
 import { Router } from '@angular/router';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BaseService {
   url: string = environment.url;
   endpoint: string = '';
-  constructor(private http: HttpClient, private router: Router) { }
-  
+  constructor(private http: HttpClient, private router: Router) {}
+
   setEndPoint(endpoint: string) {
     this.endpoint = endpoint;
   } //setea el endpoint
 
   handlerError(err: any) {
-    err.status == 401 ? this.router.navigate(['account/login']) : null;
-    err.status == 404 ? this.router.navigate(['notfound']) : null;
+    if (err.status == 401) this.router.navigate(['account/login']);
+    else if (err.status == 404) return this.router.navigate(['notfound']);
+    return err;
   }
 
   async get() {
@@ -27,12 +28,14 @@ export class BaseService {
     }
   }
 
-  async post (obj:any)  {
+  async post(obj: any) {
     try {
-        return await this.http.post(`${this.url}/${this.endpoint}`, obj).toPromise();
+      const endp = await this.http
+        .post(`${this.url}/${this.endpoint}`, obj)
+        .toPromise();
+      return endp;
     } catch (error) {
       return this.handlerError(error);
     }
   }
-
 }

@@ -7,7 +7,11 @@ import { BaseService } from '../base.service';
 export class RegisterService extends BaseService {
   postUser(obj: any) {
     this.setEndPoint('auth/signup');
-    obj = { ...obj, age: parseInt(obj.age), cel: parseInt(obj.cel) };
+    obj = {
+      ...obj,
+      birthYear: parseInt(obj.birthYear),
+      cel: obj.cel,
+    };
     console.log(obj);
 
     return this.post(obj);

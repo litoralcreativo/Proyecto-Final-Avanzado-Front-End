@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { RegisterService } from 'src/app/services/account/register.service';
 import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -14,29 +15,54 @@ export class SignupComponent implements OnInit {
     username: new FormControl('', []),
     name: new FormControl('', []),
     surname: new FormControl('', []),
-    age: new FormControl('', []),
+    birthYear: new FormControl('', []),
     password: new FormControl('', []),
   };
+
+  registrandoSpinner: boolean;
+  registrationError: boolean;
+  registrationErrorMessage: string;
 
   signupForm: FormGroup = new FormGroup(this.formObj);
 
   constructor(
     private registerService: RegisterService,
     private router: Router
-  ) {}
+  ) {
+    this.registrandoSpinner = false;
+    this.registrationError = false;
+    this.registrationErrorMessage = '';
+  }
 
   ngOnInit() {
     this.signupForm;
   }
 
   async signup() {
+    this.registrandoSpinner = true;
     try {
-      const data: any = await this.registerService.postUser(
-        this.signupForm.value
-      );
+      const data = await this.registerService.postUser(this.signupForm.value);
       console.log(data);
-    } catch (error) {
-      return error;
+
+      if (data.error) {
+        throw data.error.message;
+      } else {
+        this.registrationErrorMessage = '';
+        this.registrationError = false;
+      }
+    } catch (error: any) {
+      this.registrationError = true;
+      this.registrationErrorMessage = error;
     }
+    this.registrandoSpinner = false;
+  }
+  getMinBirthYear(): number {
+    const dt = new Date();
+    return dt.getFullYear() - 120;
+  }
+
+  getMaxBirthYear(): number {
+    const dt = new Date();
+    return dt.getFullYear() - 18;
   }
 }
