@@ -22,6 +22,7 @@ export class SignupComponent implements OnInit {
   registrandoSpinner: boolean;
   registrationError: boolean;
   registrationErrorMessage: string;
+  modalShow: boolean;
 
   signupForm: FormGroup = new FormGroup(this.formObj);
 
@@ -32,6 +33,7 @@ export class SignupComponent implements OnInit {
     this.registrandoSpinner = false;
     this.registrationError = false;
     this.registrationErrorMessage = '';
+    this.modalShow = false;
   }
 
   ngOnInit() {
@@ -49,6 +51,8 @@ export class SignupComponent implements OnInit {
       } else {
         this.registrationErrorMessage = '';
         this.registrationError = false;
+        this.modalShow = true;
+        setTimeout(() => this.router.navigate(['/']), 8000);
       }
     } catch (error: any) {
       this.registrationError = true;

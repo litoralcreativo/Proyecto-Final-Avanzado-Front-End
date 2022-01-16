@@ -9,6 +9,62 @@ h3 {
   color: #efc2bd;
 }
 
+.noclick h3,
+.noclick p {
+  color: white;
+  padding: 0 3rem;
+}
+
+.btn {
+  background-color: var(--pinky) !important;
+  color: var(--dark);
+  padding: 0;
+  transition: ease 0.3s;
+  height: 100%;
+  padding-top: 0.5rem;
+}
+
+.btn:hover {
+  background-color: var(--dark) !important;
+  color: var(--pinky) !important;
+}
+
+.progress {
+  width: 40vh;
+  max-width: 80vw;
+  height: 3rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  animation: progressbarParent 4s;
+  animation-timing-function: ease-in-out;
+}
+
+.progress-bar {
+  width: 100%;
+  animation: progressbar 4s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes progressbar {
+  0% {
+    width: 0%;
+  }
+  90% {
+    width: 100%;
+  }
+}
+
+@keyframes progressbarParent {
+  0% {
+    height: 0.5rem;
+  }
+  90% {
+    height: 0.5rem;
+  }
+  100% {
+    height: 3rem;
+  }
+}
+
 .card {
   border: none;
   padding: 40px;
@@ -40,10 +96,6 @@ input:focus {
   color: #000;
 }
 
-.signup {
-  /* height: 50px;
-  font-size: 14px; */
-}
 .btn {
   background-color: #617886;
   border-color: #efc2bd;

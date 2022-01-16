@@ -78,3 +78,22 @@
 <div *ngIf="registrandoSpinner" class="noclick">
   <div class="loader">Loading...</div>
 </div>
+
+<div *ngIf="modalShow" class="noclick">
+  <h3>Tu cuenta se creo con exito</h3>
+  <p>Para terminar de configurarla, verifica el correo que te enviamos</p>
+  <div class="progress">
+    <div class="progress-bar">
+      <a
+        href="/"
+        class="btn btn-lg"
+        role="progressbar"
+        aria-valuenow="0"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      >
+        Inicio
+      </a>
+    </div>
+  </div>
+</div>

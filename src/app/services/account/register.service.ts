@@ -16,4 +16,9 @@ export class RegisterService extends BaseService {
 
     return this.post(obj);
   }
+  verifyUser(uuid: string) {
+    this.setEndPoint(`auth/verify/${uuid}`);
+    console.log(uuid);
+    return this.get();
+  }
 }
