@@ -13,7 +13,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav w-100 mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/"
             >Quienes somos</a
@@ -42,28 +42,32 @@
         <li class="nav-item">
           <a class="nav-link" href="/consultas">Consultas</a>
         </li>
+        <hr class="dropdown-divider" style="color: white" />
+        <li class="nav-item ms-auto" style="margin-right: 4rem" id="linkCuenta">
+          <div class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Cuenta
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" routerLink="/account/login">Login</a>
+              </li>
+              <li>
+                <a class="dropdown-item" routerLink="/account/register"
+                  >Registro</a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
       </ul>
-      <hr class="dropdown-divider" style="color: white" />
-      <div class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle"
-          href="#"
-          id="navbarDropdown"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Cuenta
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li>
-            <a class="dropdown-item" routerLink="/account/login">Login</a>
-          </li>
-          <li>
-            <a class="dropdown-item" routerLink="/account/register">Registro</a>
-          </li>
-        </ul>
-      </div>
     </div>
   </div>
 </nav>
