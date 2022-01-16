@@ -1,11 +1,34 @@
 <div class="container-fluid">
   <div class="row d-flex align-items-center justify-content-center p-5">
-    <div class="card">
-      <h3>Tu cuenta se verifico con exito!!</h3>
-      <p>ya podes loguearte</p>
-      <a class="btn btn-lg" style="width: 100%" href="/account/login">
-        Login
-      </a>
-    </div>
+    <div
+      *ngIf="verificando; then verificandoTemplate; else verificadoTemplate"
+    ></div>
+    <ng-template #verificandoTemplate>
+      <div class="card">
+        <h3>Estamos verificando esta cuenta..</h3>
+        <p>Esto puede tomar algunos segunbdos</p>
+        <div class="noclick">
+          <div class="loader">Loading...</div>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template #verificadoTemplate>
+      <div class="card" *ngIf="rutaValida">
+        <h3>Tu cuenta se verifico con exito!!</h3>
+        <p>ya podes loguearte</p>
+        <a class="btn btn-lg" style="width: 100%" href="/account/login">
+          Login
+        </a>
+      </div>
+      <div class="card" *ngIf="!rutaValida">
+        <h3>No se pudo realizar la validacion</h3>
+        <p>podes volver a intentar o ponerte en cotnacto con nosotros..</p>
+        <a class="btn btn-lg" style="width: 100%" href="/contact"> Contacto </a>
+      </div>
+    </ng-template>
   </div>
+</div>
+
+<div class="noclick" *ngIf="verificando">
+  <div class="loader">Loading...</div>
 </div>
