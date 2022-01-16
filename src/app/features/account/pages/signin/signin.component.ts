@@ -17,6 +17,8 @@ export class SigninComponent implements OnInit {
   };
 
   signinForm: FormGroup = new FormGroup(this.formObj);
+  errorMessagge: string = '';
+  signing: boolean = false;
 
   constructor(private signinService: SigninService, private router: Router) {}
 
@@ -34,13 +36,18 @@ export class SigninComponent implements OnInit {
   }
 
   async signin() {
+    this.errorMessagge = '';
     try {
       const data: any = await this.signinService.auth(this.signinForm.value);
+      console.log(data);
 
-      data === undefined
-        ? console.log('acceso denegado')
-        : this.router.navigate(['products']);
-      localStorage.setItem('token', data.token);
+      if (!data.token) {
+        this.errorMessagge = 'no pudimos validar tus credenciales';
+        console.log(this.errorMessagge);
+      } else {
+        localStorage.setItem('token', data.token);
+        this.router.navigate(['']);
+      }
     } catch (error) {
       return error;
     }

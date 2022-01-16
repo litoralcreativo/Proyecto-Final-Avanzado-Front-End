@@ -32,6 +32,9 @@
           <span class="text-danger">{{ verifyField("password") }}</span>
         </div>
       </div>
+      <span class="text-danger" *ngIf="errorMessagge != ''">{{
+        errorMessagge
+      }}</span>
       <button class="btn btn-primary mt-4 signin">Ingresar</button>
 
       <div class="text-center mt-4">

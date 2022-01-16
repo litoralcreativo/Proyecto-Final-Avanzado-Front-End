@@ -44,7 +44,7 @@
         </li>
         <hr class="dropdown-divider" style="color: white" />
         <li class="nav-item ms-auto" style="margin-right: 4rem" id="linkCuenta">
-          <div class="nav-item dropdown">
+          <div class="nav-item dropdown" *ngIf="!logIn()">
             <a
               class="nav-link dropdown-toggle"
               href="#"
@@ -63,6 +63,27 @@
                 <a class="dropdown-item" routerLink="/account/register"
                   >Registro</a
                 >
+              </li>
+            </ul>
+          </div>
+          <div class="nav-item dropdown" *ngIf="logIn()">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Bienvenido
+            </a>
+            <ul
+              class="dropdown-menu"
+              aria-labelledby="navbarDropdown"
+              *ngIf="logIn()"
+            >
+              <li>
+                <a class="dropdown-item" (click)="logout()">Logout</a>
               </li>
             </ul>
           </div>
