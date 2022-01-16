@@ -1,0 +1,27 @@
+.card {
+  border: none;
+  padding: 40px;
+  color: var(--dark);
+  width: 780px;
+  min-height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card h4,
+.card h3,
+.card p {
+  text-align: justify;
+}
+
+.btn {
+  background-color: var(--dark);
+  color: var(--pinky);
+}
+
+.btn:hover {
+  background-color: #efc2bd;
+  color: #1c2331;
+}
