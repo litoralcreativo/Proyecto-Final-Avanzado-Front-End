@@ -1,9 +1,9 @@
-.bg {
-  background-color: #1c2331;
+.bg-dark {
+  background-color: #1c2331 !important;
 }
 
 nav {
-  height: 100px;
+  min-height: 100px;
 }
 
 a {

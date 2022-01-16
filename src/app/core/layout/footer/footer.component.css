@@ -1,5 +1,5 @@
 footer {
-  height: 480px;
+  height: auto;
   background-color: #1c2331;
 }
 
@@ -12,7 +12,12 @@ a:hover {
 }
 
 .main-content {
-  height: 400px;
+  min-height: 400px;
+  padding: 1rem;
+}
+
+.main-content p {
+  text-align: justify;
 }
 
 .copyright {

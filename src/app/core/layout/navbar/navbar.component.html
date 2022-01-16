@@ -1,46 +1,69 @@
-<nav
-  class="
-    d-flex
-    flex-wrap
-    align-items-center
-    justify-content-center justify-content-md-between
-    py-3
-    mb-4
-    border-bottom
-    bg
-  "
->
-  <ul class="nav col-12 col-md-auto mb-2 ms-2 justify-content-center mb-md-0">
-    <li><a routerLink="/" class="nav-link px-2 link-light">Inicio</a></li>
-    <li>
-      <a routerLink="/products" class="nav-link px-2 link-light">Productos</a>
-    </li>
-    <li>
-      <a routerLink="/" class="nav-link px-2 link-light">Quienes somos</a>
-    </li>
-    <li>
-      <a routerLink="/" class="nav-link px-2 link-light">Consultas</a>
-    </li>
-  </ul>
-
-  <li class="nav-item dropdown">
-    <a
-      class="nav-link dropdown-toggle"
-      href="#"
-      id="navbarDropdown"
-      role="button"
-      data-bs-toggle="dropdown"
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Inicio</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
       aria-expanded="false"
+      aria-label="Toggle navigation"
     >
-      Cuentas
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <li>
-        <a class="dropdown-item" routerLink="/account/login">Login</a>
-      </li>
-      <li>
-        <a class="dropdown-item" routerLink="/account/register">Registro</a>
-      </li>
-    </ul>
-  </li>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/"
+            >Quienes somos</a
+          >
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Productos
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/products">Todos</a></li>
+            <li>
+              <a class="dropdown-item" href="/products">Ultimos agregados</a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="/products">Otros</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/consultas">Consultas</a>
+        </li>
+      </ul>
+      <hr class="dropdown-divider" style="color: white" />
+      <div class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Cuenta
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li>
+            <a class="dropdown-item" routerLink="/account/login">Login</a>
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="/account/register">Registro</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </nav>
