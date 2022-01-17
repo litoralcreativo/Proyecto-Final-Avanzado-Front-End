@@ -15,6 +15,10 @@ body {
   background-position: center center;
 }
 
+.btn-pink {
+  background-color: var(--pinky) !important;
+}
+
 /* SPINNER */
 .noclick {
   background-color: rgba(0, 0, 0, 0.7);

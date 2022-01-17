@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { SigninService } from 'src/app/services/account/signin.service';
 import { Router } from '@angular/router';
+import { GlobalService } from 'src/app/global/global.service';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -20,7 +21,11 @@ export class SigninComponent implements OnInit {
   errorMessagge: string = '';
   signing: boolean = false;
 
-  constructor(private signinService: SigninService, private router: Router) {}
+  constructor(
+    private signinService: SigninService,
+    private router: Router,
+    public globals: GlobalService
+  ) {}
 
   ngOnInit() {
     this.signinForm;
@@ -39,14 +44,12 @@ export class SigninComponent implements OnInit {
     this.errorMessagge = '';
     try {
       const data: any = await this.signinService.auth(this.signinForm.value);
-      console.log(data);
-
       if (!data.token) {
         this.errorMessagge = 'no pudimos validar tus credenciales';
         console.log(this.errorMessagge);
       } else {
-        localStorage.setItem('token', data.token);
-        this.router.navigate(['']);
+        this.globals.setToken(data.token);
+        this.router.navigate(['/']);
       }
     } catch (error) {
       return error;

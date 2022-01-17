@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { GlobalService } from 'src/app/global/global.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,17 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, public globals: GlobalService) {}
 
   ngOnInit(): void {}
 
   logout() {
-    localStorage.removeItem('token');
-    console.log(localStorage);
+    this.globals.removeToken();
     this.router.navigate(['/']);
-  }
-
-  logIn(): boolean {
-    return localStorage.getItem('token') !== null;
   }
 }
