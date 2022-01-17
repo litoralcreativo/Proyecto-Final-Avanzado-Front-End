@@ -1,3 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Pushster&display=swap");
+header{
+  width : 100%;
+  height : 600px;
+  background: #800080;
+  background: -webkit-linear-gradient(to right, hsla(350, 100%, 88%, 0.712), hsla(300, 100%, 25%, 0.274)), url(./../../../assets/img/PlatoSitioCircular.jpg);
+  background: linear-gradient(to right, hsla(350, 100%, 88%, 0.712), hsla(300, 100%, 25%, 0.274)), url(./../../../assets/img/PlatoSitioCircular.jpg);
+  background-size:cover;
+  background-attachment: fixed;
+  position: relative;
+}
+section {
+  width: 100%;
+  height: 100%;
+}
+
+h2 {
+  font-family: "Pushster", cursive;
+}
+
+.section-main {
+  width:300px;
+  height:400px
+}
+
 img {
-  max-height: 500px;
+  height: 200px;
+  width: 300px;
+  padding:5px
+}
+.logo {
+  width: 100%;
+  height: 100%;
+}
+.section-end {
+  width: 100%;
+  height: 800px
+}
+.img-section{
+
+  height: 600px;
+  width: 100%;
+}
+
+section .card {
+  width: 600px;
+  height: 600px;
+  padding: 8px;
+}
+.card-img img {
+  width:600px;
+  height: 580px;
+  padding: 8px;
+}
+a{
+  color: #1c2331;
+  font-size: 20px;
+}
+a:hover {
+  color: #cff10e;
+
 }
