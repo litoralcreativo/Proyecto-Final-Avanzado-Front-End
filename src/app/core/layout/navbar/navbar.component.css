@@ -30,6 +30,24 @@ a:focus {
   background-color: #1c2331;
 }
 
+.admin-link {
+  background-color: var(--bluish);
+  color: var(--pinky) !important;
+  border-radius: 5px;
+}
+
+.admin-link a {
+  color: var(--pinky) !important;
+}
+
+.admin-link .dropdown-menu {
+  background-color: var(--bluish) !important;
+}
+
+.admin-link .dropdown-menu li a {
+  color: var(--pinky) !important;
+}
+
 @media (max-width: 992px) {
   #linkCuenta {
     margin: inherit !important;

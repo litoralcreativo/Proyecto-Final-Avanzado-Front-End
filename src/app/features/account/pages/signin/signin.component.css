@@ -8,11 +8,10 @@
 
 .card {
   border: none;
-  padding: 50px;
+  padding: 40px;
   background-color: #1c2331;
   color: #fff;
-  height: 500px;
-  width: 600px;
+  width: 780px;
 }
 
 h3 {
@@ -56,4 +55,23 @@ input:focus {
 
 .register {
   color: #efc2bd;
+}
+
+.login-form-inputs {
+  width: 100%;
+}
+
+.login-form-inputs .form-group {
+  width: 100%;
+  margin: 0 1rem;
+}
+
+@media (max-width: 850px) {
+  .login-form-inputs {
+    flex-direction: column;
+  }
+  input {
+    max-width: 100% !important;
+    margin: auto;
+  }
 }

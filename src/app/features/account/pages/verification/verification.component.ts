@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RegisterService } from 'src/app/services/account/register.service';
 
 @Component({
@@ -8,10 +8,29 @@ import { RegisterService } from 'src/app/services/account/register.service';
   styleUrls: ['./verification.component.css'],
 })
 export class VerificationComponent implements OnInit {
+  verificando: boolean = false;
+  rutaValida: boolean = true;
+  rutaValidada: boolean = false;
+
   constructor(
     private registerService: RegisterService,
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.activatedRoute.params.subscribe((params) => {
+      this.verificando = true;
+      this.verifyUuid(params.uuid);
+    });
+  }
+
+  async verifyUuid(uuid: string) {
+    this.verificando = true;
+    const response = await this.registerService.verifyUser(uuid);
+    if (response.error) {
+      this.rutaValida = false;
+    }
+    this.verificando = false;
+  }
 }

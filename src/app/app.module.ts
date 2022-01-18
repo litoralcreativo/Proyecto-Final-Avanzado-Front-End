@@ -10,6 +10,7 @@ import { LayoutModule } from './core/layout/layout.module';
 import { AccountModule } from './features/account/account.module';
 import { HomeModule } from './features/home/home.module';
 import { NotFoundComponent } from './common/notfound/notfound.component';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [AppComponent, NotFoundComponent],
@@ -22,6 +23,7 @@ import { NotFoundComponent } from './common/notfound/notfound.component';
     LayoutModule,
     AccountModule,
     HomeModule,
+    AdminModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
