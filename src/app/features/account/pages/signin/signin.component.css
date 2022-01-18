@@ -23,7 +23,7 @@ h3 {
   margin-top: 10px;
   height: 60px;
   display: flex;
-  justify-content: center;
+  justify-content: flex;
 }
 
 .form-control {
@@ -42,6 +42,7 @@ input:focus {
   height: 50px;
   font-size: 14px;
 }
+
 .btn {
   background-color: #617886;
   border-color: #efc2bd;
@@ -70,6 +71,7 @@ input:focus {
   .login-form-inputs {
     flex-direction: column;
   }
+
   input {
     max-width: 100% !important;
     margin: auto;
