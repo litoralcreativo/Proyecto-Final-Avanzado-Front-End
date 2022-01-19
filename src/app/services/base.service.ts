@@ -3,17 +3,24 @@ import { Injectable } from '@angular/core';
 import { environment } from './../../environments/environment';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { GlobalService } from '../global/global.service';
 @Injectable({
   providedIn: 'root',
 })
 export class BaseService {
   url: string = environment.url;
   endpoint: string = '';
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    public globals: GlobalService
+  ) {}
 
   setEndPoint(endpoint: string) {
     this.endpoint = endpoint;
   } //setea el endpoint
+
+  setHeaders(obj: any) {}
 
   handlerError(err: any) {
     if (err.status == 401) this.router.navigate(['account/login']);
@@ -23,7 +30,18 @@ export class BaseService {
 
   async get() {
     try {
-      return await this.http.get(`${this.url}/${this.endpoint}`).toPromise();
+      return await this.http
+        .get(
+          `${this.url}/${this.endpoint}`,
+          this.globals.token
+            ? {
+                headers: {
+                  token: this.globals.token,
+                },
+              }
+            : {}
+        )
+        .toPromise();
     } catch (error) {
       return this.handlerError(error);
     }

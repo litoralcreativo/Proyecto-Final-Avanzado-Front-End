@@ -1,5 +1,5 @@
-.bg-dark {
-  background-color: #1c2331 !important;
+.bg-softPinky {
+  background-color: var(--softPinky) !important;
 }
 
 nav {
@@ -7,24 +7,28 @@ nav {
 }
 
 a {
-  color: #fff;
+  color: var(--bluish);
 }
+
 a:hover,
 a:focus {
-  color: #efc2bd;
+  color: var(--dark);
 }
+
 .dropdown-menu {
-  color: #000;
-  background-color: #efc2bd;
+  color: var(--bluish);
+  background-color: var(--softPinky);
 }
+
 .dropdown-item {
-  color: #000;
+  color: var(--bluish);
 }
 
 .dropdown-item:focus {
   color: #fff;
   background-color: #efc2bd;
 }
+
 .dropdown-item:hover {
   color: #fff;
   background-color: #1c2331;

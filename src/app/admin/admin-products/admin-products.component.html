@@ -1,1 +1,79 @@
-<p>admin-products works!</p>
+<div class="container">
+  <h1>Administracion de Usuarios</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Habilitado</th>
+        <th scope="col">Eliminado</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <th scope="row">{{ user.name | titlecase }}</th>
+        <td>{{ user.surname | titlecase }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.cel }}</td>
+        <td>{{ user.enabled ? "SI" : "NO" }}</td>
+        <td>{{ user.deleted ? "SI" : "NO" }}</td>
+        <td>
+          <button
+            class="btn btn-danger"
+            *ngIf="globals.decodedToken.roles[0].name === 'admin'"
+          >
+            <i class="fas fa-user-times"></i>
+          </button>
+          <span style="margin: 0 5px"></span>
+          <button
+            type="button"
+            class="btn btn-success"
+            data-bs-toggle="modal"
+            data-bs-target="#editModal"
+            *ngIf="
+              globals.decodedToken.roles[0].name === 'admin' ||
+              globals.decodedToken.roles[0].name === 'moderator'
+            "
+          >
+            <i class="fas fa-user-edit"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div
+  class="modal fade"
+  id="editModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="editModalLabel"
+  aria-hidden="true"
+  data-bs-backdrop="static"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editModalLabel">Modal title</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">...</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

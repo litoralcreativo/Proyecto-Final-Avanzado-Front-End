@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalService } from 'src/app/global/global.service';
+import { UsersService } from 'src/app/services/users/users.service';
 
 @Component({
   selector: 'app-admin-products',
@@ -6,7 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-products.component.css'],
 })
 export class AdminProductsComponent implements OnInit {
-  constructor() {}
+  users: any[] = [];
 
-  ngOnInit(): void {}
+  constructor(
+    private userService: UsersService,
+    public globals: GlobalService
+  ) {}
+
+  ngOnInit(): void {
+    this.getUsers();
+  }
+
+  async getUsers() {
+    let _temp = await this.userService.getUsers();
+    this.users = _temp.users;
+    console.log(this.users);
+  }
 }
