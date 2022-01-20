@@ -5,8 +5,8 @@ import { BaseService } from '../base.service';
   providedIn: 'root',
 })
 export class ProductsService extends BaseService {
-  getProducts(obj: any) {
+  getProducts() {
     this.setEndPoint('productos');
-    return this.post(obj);
+    return this.get();
   }
 }
