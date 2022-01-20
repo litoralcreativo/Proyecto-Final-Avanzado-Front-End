@@ -1,27 +1,27 @@
 <div class="container">
-  <h1>Administracion de Productos</h1>
+  <h1>Administracion de Usuarios</h1>
   <table class="table">
     <thead>
       <tr>
         <th scope="col">Nombre</th>
-        <th scope="col">Modelo</th>
-        <th scope="col">Categoría</th>
-        <th scope="col">Descripción</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Stock</th>
-        <th scope="col">Imagen</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Habilitado</th>
+        <th scope="col">Eliminado</th>
         <th scope="col">Acciones</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of products">
-        <th scope="row">{{ product.name | titlecase }}</th>
-        <td>{{ product.model | titlecase }}</td>
-        <td>{{ product.category }}</td>
-        <td>{{ product.description }}</td>
-        <td>{{ product.price }}</td>
-        <td>{{ product.stock }}</td>
-        <td>{{ product.photos}}</td>
+      <tr *ngFor="let user of users">
+        <th scope="row">{{ user.name | titlecase }}</th>
+        <td>{{ user.surname | titlecase }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.cel }}</td>
+        <td>{{ user.enabled ? "SI" : "NO" }}</td>
+        <td>{{ user.deleted ? "SI" : "NO" }}</td>
         <td>
           <button
             class="btn btn-danger"

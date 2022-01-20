@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalService } from 'src/app/global/global.service';
-import { UsersService } from 'src/app/services/users/users.service';
+import { ProductsService } from 'src/app/services/products/products.service';
+
 
 @Component({
   selector: 'app-admin-products',
@@ -8,20 +9,27 @@ import { UsersService } from 'src/app/services/users/users.service';
   styleUrls: ['./admin-products.component.css'],
 })
 export class AdminProductsComponent implements OnInit {
-  users: any[] = [];
+
+  products: any[] = [];
 
   constructor(
-    private userService: UsersService,
+    private productsService: ProductsService,
     public globals: GlobalService
   ) {}
 
+
   ngOnInit(): void {
-    this.getUsers();
+      this.getProducts();
   }
 
-  async getUsers() {
-    let _temp = await this.userService.getUsers();
-    this.users = _temp.users;
-    console.log(this.users);
+  async getProducts() {
+    let allProducts = await this.productsService.getProducts();
+    this.products = allProducts.products;
+    console.log(this.products);
+
+
   }
+
+
+
 }
