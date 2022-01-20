@@ -12,11 +12,6 @@
   --softPinky: #efc2bdad;
 }
 
-body {
-  background-image: url("./assets/img/fondo2.png");
-  background-position: center center;
-}
-
 .btn-pink {
   background-color: var(--pinky) !important;
 }
