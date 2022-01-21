@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
 
 @font-face {
-  font-family: 'Java';
-  src: url('./assets/Fonts/JAVATEXT.TTF') format('truetype');
+  /* TITULOS */
+  font-family: 'Romantisch';
+  src: url('./assets/Fonts/ROMANTISCH.TTF') format('truetype');
 }
 
 @font-face {
-  font-family: 'Romantisch';
-  src: url('./assets/Fonts/ROMANTISCH.TTF') format('truetype');
+  /* TEXTOS */
+  font-family: 'Java';
+  src: url('./assets/Fonts/JAVATEXT.TTF') format('truetype');
 }
 
 * {
