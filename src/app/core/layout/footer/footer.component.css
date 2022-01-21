@@ -3,24 +3,13 @@ footer {
   background-color: #1c2331;
 }
 
-.social-media {
-  background-color: #db997f;
-  height: 60px;
+.logo-footer {
+  width: 30%;
+  height: 30%;
+  justify-content: center;
 }
+
 a:hover {
-  font-size: 25px;
-}
-
-.main-content {
-  min-height: 400px;
-  padding: 1rem;
-}
-
-.main-content p {
-  text-align: justify;
-}
-
-.copyright {
-  height: 60px;
-  background-color: #db997f;
+  color: var(--dark);
+  font-size: 20px;
 }

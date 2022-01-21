@@ -3,7 +3,8 @@ img {
   height: 50px;
   padding: 12px;
 }
-button{
+
+button {
   display: block;
   position: relative;
   overflow: hidden;
@@ -20,13 +21,13 @@ button:hover .uno {
 button:hover .dos {
   transform: none;
 }
-.uno{
+
+.uno {
   display: inline-block;
   padding: 5px;
-
 }
 
-.dos{
+.dos {
   position: absolute;
   top: 0;
   right: 0;
