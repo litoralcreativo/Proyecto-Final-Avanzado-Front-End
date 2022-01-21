@@ -3,6 +3,8 @@
 section {
   width: 100%;
   height: 100%;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
 }
 
 h2 {
@@ -17,6 +19,8 @@ h2 {
 img {
   height: 200px;
   width: 300px;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
 }
 
 .logo {
@@ -54,5 +58,4 @@ a {
 
 a:hover {
   color: #cff10e;
-
 }

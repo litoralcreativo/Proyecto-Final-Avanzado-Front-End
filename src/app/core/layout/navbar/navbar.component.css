@@ -49,7 +49,7 @@ a {
 
 a:hover,
 a:focus {
-  color: var(--dark);
+  color: var(--softPinky);
 }
 
 .dropdown-menu {
@@ -78,6 +78,10 @@ a:focus {
 }
 
 .admin-link a {
+  color: white !important;
+}
+
+.admin-link a:hover {
   color: var(--pinky) !important;
 }
 

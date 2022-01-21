@@ -9,7 +9,11 @@ footer {
   justify-content: center;
 }
 
+a {
+  color: white;
+  Text-decoration: none
+}
+
 a:hover {
-  color: var(--dark);
-  font-size: 20px;
+  color: var(--pinky);
 }
