@@ -42,16 +42,21 @@ img {
   width: 100%;
 }
 
-section .card {
-  width: 600px;
+.card {
+  width: 650px;
   height: 600px;
-  padding: 8px;
-}
-
+  background: #efc2bd;
+  border-radius: 40px 0 40px 0;
+  display:flex;
+  justify-content: center;
+ }
 .card-img img {
   width: 600px;
-  height: 580px;
-  padding: 8px;
+  height: 500px;
+  padding: 5px;
+  margin: 20px;
+
+
 }
 
 a {

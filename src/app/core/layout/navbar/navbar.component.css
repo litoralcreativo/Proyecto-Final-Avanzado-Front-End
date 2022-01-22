@@ -3,42 +3,44 @@ img {
   height: 50px;
   padding: 12px;
 }
-
-button {
-  display: block;
-  position: relative;
-  overflow: hidden;
-}
-
 span {
   transition: transform 0.2s ease-out;
 }
 
-button:hover .uno {
-  transform: translatey(100%);
+.ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-
-button:hover .dos {
-  transform: none;
+.hamRotate.active {
+  transform: rotate(45deg);
 }
-
-.uno {
-  display: inline-block;
-  padding: 5px;
+.hamRotate180.active {
+  transform: rotate(180deg);
 }
-
-.dos {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(-100%);
+.line {
+  fill:none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke:#000;
+  stroke-width:5.5;
+  stroke-linecap:round;
 }
-
+.ham1 .top {
+  stroke-dasharray: 40 139;
+}
+.ham1 .bottom {
+  stroke-dasharray: 40 180;
+}
+.ham1.active .top {
+  stroke-dashoffset: -98px;
+}
+.ham1.active .bottom {
+  stroke-dashoffset: -138px;
+}
 nav {
   min-height: 100px;
 }

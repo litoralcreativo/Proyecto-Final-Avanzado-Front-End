@@ -37,22 +37,47 @@ input:focus {
   color: black;
   background-color: #efc2bd;
 }
-
-.signin {
-  height: 50px;
-  font-size: 14px;
-}
-
 .btn {
-  background-color: #617886;
-  border-color: #efc2bd;
-  font-size: 18px;
-}
+  position: relative;
+  margin: auto;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+ }
 
-.btn:hover {
-  background-color: #efc2bd;
-  color: #1c1e21;
-}
+ .btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #efc2bd;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+
+ }
+
+ .btn span {
+  position: relative;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #fff;
+ }
+
+ .btn:hover:before {
+  width: 100%;
+  background: #b1dae7;
+
+
+
+ }
+ .btn:active {
+  transform: scale(0.95);
+ }
 
 .register {
   color: #efc2bd;
