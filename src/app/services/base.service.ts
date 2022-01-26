@@ -8,7 +8,7 @@ import { GlobalService } from '../global/global.service';
   providedIn: 'root',
 })
 export class BaseService {
-  url: string = process.env.url;
+  url?: string = process.env.url;
   endpoint: string = '';
   constructor(
     private http: HttpClient,
