@@ -4,11 +4,12 @@ import { environment } from './../../environments/environment';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { GlobalService } from '../global/global.service';
+
 @Injectable({
   providedIn: 'root',
 })
 export class BaseService {
-  url?: string = process.env.url;
+  url?: string = environment.url || process.env.URL;
   endpoint: string = '';
   constructor(
     private http: HttpClient,

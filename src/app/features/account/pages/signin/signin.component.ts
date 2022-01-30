@@ -44,6 +44,7 @@ export class SigninComponent implements OnInit {
     this.errorMessagge = '';
     try {
       const data: any = await this.signinService.auth(this.signinForm.value);
+      console.log(data);
       if (!data.token) {
         this.errorMessagge = 'no pudimos validar tus credenciales';
         console.log(this.errorMessagge);
