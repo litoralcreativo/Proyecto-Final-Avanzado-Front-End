@@ -9,6 +9,7 @@ import { VerificationComponent } from './pages/verification/verification.compone
 
 @NgModule({
   declarations: [SignupComponent, SigninComponent, VerificationComponent],
+
   imports: [CommonModule, UsersRoutingModule, FormsModule, ReactiveFormsModule],
   exports: [SignupComponent, SigninComponent],
 })

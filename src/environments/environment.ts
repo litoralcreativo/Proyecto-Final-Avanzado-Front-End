@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  url: 'https://calamacrameapi.herokuapp.com/api',
+  url: 'http://localhost:4500/api',
 };

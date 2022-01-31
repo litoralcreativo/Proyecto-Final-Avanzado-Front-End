@@ -21,36 +21,287 @@
         <td>{{ product.description }}</td>
         <td>{{ product.price }}</td>
         <td>{{ product.stock }}</td>
-        <td>{{ product.img[0]}}</td>
+        <td>{{ product.img[0] }}</td>
         <td>
-          <button class="btn btn-danger" *ngIf="globals.decodedToken.roles[0].name === 'admin'">
+          <button
+            class="btn btn-danger"
+            *ngIf="globals.decodedToken.roles[0].name === 'admin'"
+          >
             <i class="fas fa-user-times"></i>
           </button>
           <span style="margin: 0 5px"></span>
-          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editModal" *ngIf="
+          <button
+            type="button"
+            class="btn btn-success"
+            data-bs-toggle="modal"
+            data-bs-target="#editModal"
+            *ngIf="
               globals.decodedToken.roles[0].name === 'admin' ||
               globals.decodedToken.roles[0].name === 'moderator'
-            ">
+            "
+          >
             <i class="fas fa-user-edit"></i>
           </button>
         </td>
       </tr>
     </tbody>
   </table>
+  <div
+    class="btn btn-primary mt-4"
+    data-bs-toggle="modal"
+    data-bs-target="#creationModal"
+  >
+    Nuevo Producto
+  </div>
 </div>
 
-<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true"
-  data-bs-backdrop="static">
+<div
+  class="modal fade"
+  id="editModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="editModalLabel"
+  aria-hidden="true"
+  data-bs-backdrop="static"
+>
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="editModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body">...</div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="creationModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="creationModalLabel"
+  aria-hidden="true"
+  data-bs-backdrop="static"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="creationModalLabel">Nuevo Producto</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formularioDeCreacion">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input
+              id="name"
+              type="text"
+              class="form-control"
+              formControlName="name"
+            />
+            <div
+              class="error"
+              *ngIf="
+                formularioDeCreacion.controls.name.errors?.required &&
+                formularioDeCreacion.controls.name.touched
+              "
+            >
+              el campo es requerido
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="model">Modelo</label>
+            <input
+              id="model"
+              type="text"
+              class="form-control"
+              formControlName="model"
+            />
+            <div
+              class="error"
+              *ngIf="
+                formularioDeCreacion.controls.model.errors?.required &&
+                formularioDeCreacion.controls.model.touched
+              "
+            >
+              el campo es requerido
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="category">Categoria</label>
+            <input
+              id="category"
+              type="text"
+              class="form-control"
+              formControlName="category"
+            />
+            <div
+              class="error"
+              *ngIf="
+                formularioDeCreacion.controls.category.errors?.required &&
+                formularioDeCreacion.controls.category.touched
+              "
+            >
+              el campo es requerido
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="description">Descripcion</label>
+            <input
+              id="description"
+              type="text"
+              class="form-control"
+              formControlName="description"
+            />
+            <div
+              class="error"
+              *ngIf="
+                formularioDeCreacion.controls.description.errors?.required &&
+                formularioDeCreacion.controls.description.touched
+              "
+            >
+              el campo es requerido
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="price">Precio</label>
+            <input
+              id="price"
+              type="text"
+              class="form-control"
+              formControlName="price"
+            />
+            <div
+              class="error"
+              *ngIf="
+                formularioDeCreacion.controls.price.errors?.required &&
+                formularioDeCreacion.controls.price.touched
+              "
+            >
+              el campo es requerido
+            </div>
+            <div
+              class="error"
+              *ngIf="
+                formularioDeCreacion.controls.price.errors?.priceValidator &&
+                formularioDeCreacion.controls.price.touched
+              "
+            >
+              {{ formularioDeCreacion.controls.price.errors?.priceValidator }}
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="stock">Stock</label>
+            <input
+              id="stock"
+              type="text"
+              class="form-control"
+              formControlName="stock"
+            />
+            <div
+              class="error"
+              *ngIf="
+                formularioDeCreacion.controls.stock.errors?.required &&
+                formularioDeCreacion.controls.stock.touched
+              "
+            >
+              el campo es requerido
+            </div>
+            <div
+              class="error"
+              *ngIf="
+                formularioDeCreacion.controls.stock.errors?.numberValidator &&
+                formularioDeCreacion.controls.stock.touched
+              "
+            >
+              {{ formularioDeCreacion.controls.stock.errors?.numberValidator }}
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="imgTitle">Titulo de la imagen</label>
+            <input
+              id="imgTitle"
+              type="text"
+              class="form-control"
+              formControlName="imgTitle"
+            />
+            <div
+              class="error"
+              *ngIf="
+                formularioDeCreacion.controls.imgTitle.errors?.required &&
+                formularioDeCreacion.controls.imgTitle.touched
+              "
+            >
+              el campo es requerido
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="imgDescription">Descripcion de la imagen</label>
+            <input
+              id="imgDescription"
+              type="text"
+              class="form-control"
+              formControlName="imgDescription"
+            />
+            <div
+              class="error"
+              *ngIf="
+                formularioDeCreacion.controls.imgDescription.errors?.required &&
+                formularioDeCreacion.controls.imgDescription.touched
+              "
+            >
+              el campo es requerido
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="image">Imagen</label>
+            <input
+              id="image"
+              type="file"
+              class="form-control"
+              formControlName="image"
+              (change)="onFileChange($event)"
+            />
+            <div
+              class="error"
+              *ngIf="
+                formularioDeCreacion.controls.image.errors?.required &&
+                formularioDeCreacion.controls.image.touched
+              "
+            >
+              el campo es requerido
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-dismiss="modal"
+          (click)="onFormOK()"
+          [disabled]="!formularioDeCreacion.valid"
+        >
+          Crear
+        </button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancel
         </button>
       </div>
     </div>

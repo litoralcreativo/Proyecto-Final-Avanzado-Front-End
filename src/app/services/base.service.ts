@@ -49,9 +49,11 @@ export class BaseService {
   }
 
   async post(obj: any) {
+    let headers = new HttpHeaders();
+    if (this.globals.token) headers = headers.set('token', this.globals.token);
     try {
       const endp = await this.http
-        .post(`${this.url}/${this.endpoint}`, obj)
+        .post(`${this.url}/${this.endpoint}`, obj, { headers: headers })
         .toPromise();
       return endp;
     } catch (error) {
