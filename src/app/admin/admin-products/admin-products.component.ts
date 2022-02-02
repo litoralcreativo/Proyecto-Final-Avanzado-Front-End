@@ -71,7 +71,6 @@ export class AdminProductsComponent implements OnInit {
   onFileChange(event: any) {
     if (event.target.files.length > 0) {
       this.file = event.target.files[0];
-      console.log(event.target.files[0]);
     }
   }
 
@@ -86,17 +85,18 @@ export class AdminProductsComponent implements OnInit {
     this.formularioDeCreacion.value.price = parseFloat(price);
     this.formularioDeCreacion.value.stock = parseFloat(stock);
     let body = { ...this.formularioDeCreacion.value };
-    /* body.image = this.file;
+    body.image = this.file;
 
     let formData = new FormData();
     let keys = Object.keys(this.formularioDeCreacion.value);
     for (let i = 0; i < keys.length; i++) {
-      formData.set(keys[i], this.formularioDeCreacion.value[keys[i]]);
+      formData.append(keys[i], this.formularioDeCreacion.value[keys[i]]);
     }
     formData.set('image', this.file);
     console.log(formData);
+    /* 
     console.log(formData.get('file')); */
 
-    let postProduct = await this.productsService.createProduct(body);
+    let postProduct = await this.productsService.createProduct(formData);
   }
 }

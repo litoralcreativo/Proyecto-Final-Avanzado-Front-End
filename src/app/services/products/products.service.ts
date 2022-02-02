@@ -11,6 +11,6 @@ export class ProductsService extends BaseService {
   }
   createProduct(obj: any) {
     this.setEndPoint('productos');
-    return this.post(obj);
+    return this.post(obj, true);
   }
 }

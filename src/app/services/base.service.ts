@@ -48,9 +48,10 @@ export class BaseService {
     }
   }
 
-  async post(obj: any) {
+  async post(obj: any, multipart: boolean = false) {
     let headers = new HttpHeaders();
     if (this.globals.token) headers = headers.set('token', this.globals.token);
+    /* if (multipart) headers = headers.set('Content-type', 'multipart/form-data'); */
     try {
       const endp = await this.http
         .post(`${this.url}/${this.endpoint}`, obj, { headers: headers })
