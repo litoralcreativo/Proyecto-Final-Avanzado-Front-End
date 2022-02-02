@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { GlobalService } from 'src/app/global/global.service';
 import { ProductsService } from 'src/app/services/products/products.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-admin-products',
@@ -74,6 +75,12 @@ export class AdminProductsComponent implements OnInit {
     }
   }
 
+  setImgPath(original: string) {
+    let newApiPath = this.productsService.url?.slice(0, -3);
+    let newPhotoPath: string = original.replace('\\', '/');
+    return `${newApiPath}${newPhotoPath}`;
+  }
+
   async getProducts() {
     let allProducts = await this.productsService.getProducts();
     this.products = allProducts.products;
@@ -94,9 +101,7 @@ export class AdminProductsComponent implements OnInit {
     }
     formData.set('image', this.file);
     console.log(formData);
-    /* 
-    console.log(formData.get('file')); */
-
     let postProduct = await this.productsService.createProduct(formData);
+    this.getProducts();
   }
 }

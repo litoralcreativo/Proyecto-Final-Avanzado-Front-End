@@ -21,7 +21,13 @@
         <td>{{ product.description }}</td>
         <td>{{ product.price }}</td>
         <td>{{ product.stock }}</td>
-        <td>{{ product.img[0] }}</td>
+        <td>
+          <img
+            class="product-img"
+            src="{{ setImgPath(product.img[0].imgPath) }}"
+            alt=""
+          />
+        </td>
         <td>
           <button
             class="btn btn-danger"

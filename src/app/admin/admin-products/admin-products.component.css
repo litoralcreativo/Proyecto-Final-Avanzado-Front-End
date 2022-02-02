@@ -20,3 +20,9 @@ input.ng-invalid.ng-touched {
   color: tomato;
   font-size: 12px;
 }
+
+.product-img {
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+}
